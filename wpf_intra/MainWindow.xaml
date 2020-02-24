@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_intra"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Gestion de Clients" Height="450" Width="800">
+    
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Fichier">
+                <MenuItem Header="Ouvrir..."></MenuItem>
+                <MenuItem Header="Sauvegarder"></MenuItem>
+                <MenuItem Header="Fermer"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Quitter"></MenuItem>
 
-    </Grid>
+            </MenuItem>
+                <MenuItem Header="_Edition">
+
+                </MenuItem>
+                <MenuItem Header="_Affichage">
+
+                </MenuItem>
+            </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock Text="Produit sélectionné : "/>
+            <TextBlock Text="{Binding SelectedProduct.ShortDescription}"/>
+        </StatusBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label VerticalAlignment="Center" Content="Liste des clients"></Label>
+                    <Button Content="Nouveau Client" Margin="5px"></Button>
+                </StackPanel>
+                <ListBox Grid.Row="1"></ListBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="8*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <Label Content="Prénom:" Width="100px" ></Label>
+                    <TextBox Text="" Width="150px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <Label Content="Nom:" Width="100px"></Label>
+                <TextBox Text="" Width="150px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Label Content="Adresse:" Width="100px"></Label>
+                <TextBox Text="" Width="250px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                    <Label Content="Ville:" Width="100px"></Label>
+                    <TextBox Text="" Width="150px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                    <Label Content="Province:" Width="100px"></Label>
+                    <TextBox Text="" Width="150px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Label Content="Code Postal:" Width="100px"></Label>
+                    <TextBox Text="" Width="150px"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Label Content="Contact:" Width="100px"></Label>
+                    <TextBox Text="" Width="250px"></TextBox>
+                </StackPanel>
+                <Button Content="Supprimer Client" Grid.Row="5" Grid.Column="1"></Button>
+            </Grid>
+            
+        </Grid>
+
+      </DockPanel>
+    
 </Window>
