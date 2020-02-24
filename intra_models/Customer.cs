@@ -8,7 +8,7 @@ namespace intra_models
     {
         private string name;
         private string lastName;
-        private string adress;
+        private string address;
         private string city;
         private string province;
         private string postalCode;
@@ -33,12 +33,12 @@ namespace intra_models
                 OnPropertyChanged();
             }
         }
-        public string Adress
+        public string Address
         {
-            get => adress;
+            get => address;
             set
             {
-                adress = value;
+                address = value;
                 OnPropertyChanged();
             }
         }
