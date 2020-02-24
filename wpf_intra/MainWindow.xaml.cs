@@ -85,5 +85,15 @@ namespace wpf_intra
             ListView lv = (ListView)sender;
             CurrentCustomer = (Customer)lv.SelectedItem;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            customers.Add(new Customer { });
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            customers.Remove(currentCustomer);
+        }
     }
 }
